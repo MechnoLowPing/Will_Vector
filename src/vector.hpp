@@ -1,24 +1,31 @@
 #ifndef vector_hpp
 #define vector_hpp
 #include<vector>
+#include<queue>
 
 namespace vectorcalc{
 
-    void dialog(std::vector<int>& container){
+    struct vector_T{
+    
+        private:
+        std::vector<int> _container{0,1};
 
-        std::cout<<"Geben Sie 2 Zahlen ein!"<<std::endl;
-        std::cin>>container.at(0);
-        std::cin>>container.at(1);
-    }
+        public:
+        void mainloop();
+        void addition();
+    };
 
-    void addition(std::vector<int>& container){
+    struct queue_T{
 
-        dialog(container);
+        private:
+        std::queue<int> _container{};
 
-        int a = container.at(0)+container.at(1);
-        std::cout<<"Das Ergebniss ist: "<< a << std::endl;
+        public:
+        void mainloop();
+        void addition();
 
-    }
+    };
+
 }
 
 

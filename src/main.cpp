@@ -3,30 +3,28 @@
 #include"vector.hpp"
 
 
-void mainloop(std::vector<int>& intcontainer){
+void mainloop(vectorcalc::vector_T& container){
 
     int option;
-
+        
     while(true){
 
         std::cout<<"Quit 0) Addition 1)"<<std::endl;
         std::cin>>option;
 
-        namespace vc = vectorcalc;
-
         switch (option){
         default: std::cout<<"Fehler"<<std::endl; break;
-        case 1: vectorcalc::addition(intcontainer);  break;
+        case 1: container.addition();  break;
         case 0: return;
         }
     }
 }
 
 
+
 int main(){
 
-    std::vector<int> container{0, 1};
+    vectorcalc::vector_T container{};
     mainloop(container);
-
 }
 

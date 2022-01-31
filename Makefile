@@ -9,8 +9,11 @@ RM = rm -rf
 all: clean compile
 
 
-compile:
-	$(CC) $(CFLAGS) -o $(TARGET)/main.out $(SRC)/main.cpp
+compile: vector
+	$(CC) $(CFLAGS) -o $(TARGET)/main.out $(SRC)/main.cpp $(TARGET)/vector.o
+
+vector:
+	$(CC) $(CFLAGS) -c -o $(TARGET)/vector.o $(SRC)/vector.cpp
 
 clean:
 	$(RM) $(TARGET)/*.out
